@@ -41,7 +41,7 @@ jobs:
           plugin_wakatime: yes
           plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }}
           plugin_wakatime_repositories_visibility: public
-          plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
+          plugin_wakatime_sections: time, languages, languages-graphs, editors, os
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
@@ -85,25 +85,3 @@ jobs:
           plugin_achievements_limit: 12
           plugin_achievements_secrets: yes
           plugin_achievements_threshold: C
-      - uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-
-          # Options
-          filename: music.svg
-          user: Senexis
-          template: classic
-          base: ""
-          config_display: columns
-          config_octicon: yes
-          config_timezone: Europe/Amsterdam
-          
-          # Plugins
-          plugin_music: yes
-          plugin_music_limit: 4
-          plugin_music_mode: recent
-          plugin_music_played_at: yes
-          plugin_music_provider: spotify
-          plugin_music_time_range: short
-          plugin_music_top_type: tracks
-          plugin_music_user: .user.login
